@@ -18,6 +18,7 @@ namespace UnityExplorer.ObjectExplorer
                 OnInspectedSceneChanged?.Invoke(selectedScene.Value);
             }
         }
+
         private static Scene? selectedScene;
 
         /// <summary>The GameObjects in the currently inspected scene.</summary>
@@ -80,7 +81,7 @@ namespace UnityExplorer.ObjectExplorer
                 int sceneCount = SceneManager.sceneCountInBuildSettings;
                 for (int i = 0; i < sceneCount; i++)
                 {
-                    string scenePath = (string)method.Invoke(null, [ i ]);
+                    string scenePath = (string)method.Invoke(null, [i]);
                     AllSceneNames.Add(scenePath);
                 }
 
